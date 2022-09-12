@@ -1,6 +1,8 @@
-# Handwritten Digit Recognition Using Machine Learning
-Trained on a subset of the MNIST database.
+# Handwritten digit recognition using machine learning
+Trained on the MNIST database of handwritten digits.
+
+![Program demo](https://media.giphy.com/media/KYFVlapxijkxlWWNOm/giphy.gif)
 
 ## Prediction Accuracy
-- K-Nearest Neighbour: 94.3% 
-- Random Forest: 93.5%  
+- K-Nearest Neighbour: 97.5% 
+- Random Forest: 96.8%  
