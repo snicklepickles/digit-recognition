@@ -19,6 +19,8 @@ class PaintBrush(Widget):
 
 class DrawingApp(App):
     def build(self):
+        self.title = 'Digit Recognition'
+        self.icon = '../assets/icon.png'
         boxlayout = BoxLayout()
         self.painter = PaintBrush()
         clear_button = Button(text='Clear')
