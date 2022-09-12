@@ -4,8 +4,8 @@ from cv2 import imread, resize
 
 def predict(image_path):
     # Loads the best models from disk
-    knn_model = pickle.load(open('knn_model.sav', 'rb'))
-    rf_model = pickle.load(open('rf_model.sav', 'rb'))
+    knn_model = pickle.load(open('../models/knn_model.sav', 'rb'))
+    rf_model = pickle.load(open('../models/rf_model.sav', 'rb'))
 
     # Reads the image from disk
     image = imread(image_path, 0)
