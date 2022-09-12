@@ -23,15 +23,14 @@ class DrawingApp(App):
         self.icon = '../assets/icon.png'
         boxlayout = BoxLayout()
         self.painter = PaintBrush()
-        clear_button = Button(text='Clear')
-        clear_button.bind(on_release=self.clear_canvas)
-        save_button = Button(text='Predict')
+        clear_button = Button(text='Clear', on_press=self.clear_canvas, font_size=30)
+        save_button = Button(text='Predict', font_size=30)
         save_button.bind(on_release=self.predict_canvas)
         boxlayout.add_widget(self.painter)
         sidebar = BoxLayout(orientation='vertical', size_hint=(0.333, 1))
         sidebar.add_widget(clear_button)
         sidebar.add_widget(save_button)
-        self.prediction_text = Label(text='KNN:\nRF:')
+        self.prediction_text = Label(text='KNN:\nRF:', font_size=30)
         sidebar.add_widget(self.prediction_text)
         boxlayout.add_widget(sidebar)
         return boxlayout
