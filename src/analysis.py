@@ -12,15 +12,13 @@ import pickle
 
 # x is an array of grayscale image data
 # y is an array of digit labels (integers in range 0-9)
-(x, y) = tf.keras.datasets.mnist.load_data()[0]
+(x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()
 
-# Reshapes x to a 2D array (number of images x pixels per image)
-X = np.reshape(x, (60000, 28 * 28))
+# Reshapes image data to 2D arrays (number of images x pixels per image)
+x_train = np.reshape(x_train, (60000, 28 * 28))
+x_test = np.reshape(x_test, (10000, 28 * 28))
 
-# Splits the data into training and test sets
-x_train, x_test, y_train, y_test = train_test_split(X[:6000], y[:6000], test_size=0.3, random_state=40)
-
-# Normalises the training data
+# Normalises the image data
 x_train = Normalizer().fit_transform(x_train)
 x_test = Normalizer().fit_transform(x_test)
 
