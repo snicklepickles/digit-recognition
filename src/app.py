@@ -4,6 +4,7 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.widget import Widget
 from kivy.uix.button import Button
 from kivy.uix.label import Label
+from kivy.utils import rgba
 import predict
 
 
@@ -23,14 +24,14 @@ class DrawingApp(App):
         self.icon = '../assets/icon.png'
         boxlayout = BoxLayout()
         self.painter = PaintBrush()
-        clear_button = Button(text='Clear', on_press=self.clear_canvas, font_size=30)
-        save_button = Button(text='Predict', font_size=30)
+        clear_button = Button(text='Clear', on_press=self.clear_canvas, font_size=30, color=rgba('#AF94E3'), background_color=rgba('#353855'))
+        save_button = Button(text='Predict', font_size=30, color=rgba('#AF94E3'), background_color=rgba('#353855'))
         save_button.bind(on_release=self.predict_canvas)
         boxlayout.add_widget(self.painter)
         sidebar = BoxLayout(orientation='vertical', size_hint=(0.333, 1))
         sidebar.add_widget(clear_button)
         sidebar.add_widget(save_button)
-        self.prediction_text = Label(text='KNN:\nRF:', font_size=30)
+        self.prediction_text = Label(text='KNN:\nRF:', font_size=30, color='#AF94E3')
         sidebar.add_widget(self.prediction_text)
         boxlayout.add_widget(sidebar)
         return boxlayout
